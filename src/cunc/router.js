@@ -11,13 +11,13 @@ const CreateMusicSchema = {
     body: Joi.object({
         title: Joi.string(),
         author: Joi.string(),
-        album: Joi.string().allow(null),
-        icon: Joi.string().allow(null),
-        color: Joi.string().allow(null),
+        album: Joi.string().allow(null, ''),
+        icon: Joi.string().allow(null, ''),
+        color: Joi.string().allow(null, ''),
         music: {
             text: Joi.string(),
-            video: Joi.string().allow(null),
-            audio: Joi.string().allow(null)
+            video: Joi.string().allow(null, ''),
+            audio: Joi.string().allow(null, '')
         },
         number: Joi.number()
     }),
@@ -27,13 +27,13 @@ const UpdateMusicSchema = {
     body: Joi.object({
         title: Joi.string(),
         author: Joi.string(),
-        album: Joi.string().allow(null),
-        icon: Joi.string().allow(null),
-        color: Joi.string().allow(null),
+        album: Joi.string().allow(null, ''),
+        icon: Joi.string().allow(null, ''),
+        color: Joi.string().allow(null, ''),
         music: {
             text: Joi.string(),
-            video: Joi.string().allow(null),
-            audio: Joi.string().allow(null)
+            video: Joi.string().allow(null, ''),
+            audio: Joi.string().allow(null, '')
         },
         number: Joi.number().required()
     }),
