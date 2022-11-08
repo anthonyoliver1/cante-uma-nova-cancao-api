@@ -7,7 +7,7 @@ const cunc = require('./cunc/router');
 const logger = require('./middleware/logger');
 const errorHandler = require('./middleware/error');
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 const app = express();
 const router = express.Router();
 
