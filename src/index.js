@@ -7,7 +7,7 @@ const cunc = require('./cunc/router');
 const logger = require('./middleware/logger');
 const errorHandler = require('./middleware/error');
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 const app = express();
 const router = express.Router();
 
@@ -27,6 +27,7 @@ const DB = `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.wwwenr0.mongodb.net/?re
 mongoose.connect(DB)
   .then((_resp) => {
     console.log('MongoDB Connected!');
+    console.log(`Running in port: ${port}`)
     app.listen(3000);
   })
   .catch((error) => {
