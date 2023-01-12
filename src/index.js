@@ -24,6 +24,7 @@ const DB_USER = process.env.DB_USER;
 const DB_PASS = encodeURIComponent(process.env.DB_PASS);
 const DB = `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.wwwenr0.mongodb.net/?retryWrites=true&w=majority`;
 
+mongoose.set('strictQuery', true);
 mongoose.connect(DB)
   .then((_resp) => {
     console.log('MongoDB Connected!');
