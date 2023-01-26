@@ -52,8 +52,13 @@ const DeleteMusicSchema = {
 }
 
 const getAllMusics = async (_req, resp) => {
-    const music = await Music.find();
-    resp.status(200).json(music);
+    try {
+        const music = await Music.find();
+        resp.status(200).json(music);
+
+    } catch (error) {
+        resp.status(404).json({ message: 'Não foi possível buscar as músicas', error: 'NOT_MUSIC' })
+    }
 }
 
 const findMusic = async (req, resp) => {
